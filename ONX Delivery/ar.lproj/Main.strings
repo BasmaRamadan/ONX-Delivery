@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "IOL-Uf-dOc"; */
+"IOL-Uf-dOc.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "User ID"; ObjectID = "LIO-rC-LDh"; */
+"LIO-rC-LDh.placeholder" = "User ID";
+
+/* Class = "UIButton"; configuration.title = "Log in"; ObjectID = "NZU-iT-Aex"; */
+"NZU-iT-Aex.configuration.title" = "Log in";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "NZU-iT-Aex"; */
+"NZU-iT-Aex.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "lx4-VI-deH"; */
+"lx4-VI-deH.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Log back into your account"; ObjectID = "mxE-B2-MEB"; */
+"mxE-B2-MEB.text" = "Log back into your account";
+
+/* Class = "UILabel"; text = "Welcome Back!"; ObjectID = "u6X-3y-zgT"; */
+"u6X-3y-zgT.text" = "Welcome Back!";

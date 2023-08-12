@@ -26,7 +26,7 @@ class LoginVC: ParentViewController {
             self.showAlert(title: "", message: "Please enter password!".localized, shouldpop: false)
             return
         }
-        //    self.showLoader()
+        self.showLoader()
         loginBT.isEnabled = false
         viewModel.getUser(id: userID, password: password)
     }
@@ -34,7 +34,6 @@ class LoginVC: ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews ()
-        
         
     }
     
@@ -44,7 +43,44 @@ class LoginVC: ParentViewController {
         roundViewCorners(view: userIDView, radius: 25)
         roundViewCorners(view: passwordView, radius: 25)
         roundViewCorners(view: loginBT, radius: 25)
+        viewModel.updateState = {[weak self] () in
+            DispatchQueue.main.async {
+                switch self?.viewModel.state {
+                case .error:
+                    self?.hideLoader()
+                    self?.loginBT.isEnabled = true
+                    self?.showAlert(title: "", message: self?.viewModel.errorMessage, shouldpop: false)
+                    let viewController = MainVC(nibName: "MainVCViewController", bundle: nil)
+                    self?.navigationController?.pushViewController(viewController, animated: true)
+                    break
+                case .loading:
+                    break
+                case .loaded:
+                    self?.hideLoader()
+                    break
+                case .empty:
+                    self?.hideLoader()
+                    self?.loginBT.isEnabled = true
+                    self?.showAlert(title: "", message: self?.viewModel.errorMessage, shouldpop: false)
+                    break
+                case .none: break
+                    
+                }
+            }
+            
+        }
     }
     
 }
 
+extension LoginVC : AppStateDelegate {
+    func appEnteredBG() {
+        
+    }
+    
+    func appInactive() {
+        
+    }
+    
+    
+}

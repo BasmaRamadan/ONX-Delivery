@@ -44,6 +44,8 @@ class LoginViewModel {
             }
             else
             {
+                let message = response?["ErrMsg"].stringValue
+                self.errorMessage = message ?? "Something wnt wrong!".localized
                 self.state = .error
             }
         }
