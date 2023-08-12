@@ -15,18 +15,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Wsa-FO-LnC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Wsa-FO-LnC">
                                 <rect key="frame" x="41" y="287" width="332" height="199"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="332" id="5OA-7a-kU4"/>
-                                    <constraint firstAttribute="height" constant="199" id="F6L-Pa-3cs"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Object" translatesAutoresizingMaskIntoConstraints="NO" id="iVD-Sj-6wF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Object" translatesAutoresizingMaskIntoConstraints="NO" id="iVD-Sj-6wF">
                                 <rect key="frame" x="0.0" y="572" width="414" height="290"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="290" id="ikL-rb-2cY"/>
-                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
