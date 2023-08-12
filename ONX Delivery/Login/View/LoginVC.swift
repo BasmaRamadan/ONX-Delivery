@@ -10,7 +10,7 @@ import UIKit
 class LoginVC: ParentViewController {
     
     var viewModel = LoginViewModel()
-
+    
     @IBOutlet weak var userIDView: UIView!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var userIDTF: UITextField!
@@ -18,19 +18,17 @@ class LoginVC: ParentViewController {
     @IBOutlet weak var loginBT: UIButton!
     
     @IBAction func loginAction(_ sender: Any) {
-//        guard let userID = self.userIDTF.text, userID != "" else {
-//            self.showAlert(title: "", message: "Please enter User ID!".localized, shouldpop: false)
-//            return
-//        }
-//        guard let password = self.passwordTF.text, password != "" else {
-//            self.showAlert(title: "", message: "Please enter password!".localized, shouldpop: false)
-//            return
-//        }
-//    self.showLoader()
-    loginBT.isEnabled = false
-        let userID = self.userIDTF.text!
-        let password = self.passwordTF.text!
-    viewModel.getUser(id: userID, password: password)
+        guard let userID = self.userIDTF.text, userID != "" else {
+            self.showAlert(title: "", message: "Please enter User ID!".localized, shouldpop: false)
+            return
+        }
+        guard let password = self.passwordTF.text, password != "" else {
+            self.showAlert(title: "", message: "Please enter password!".localized, shouldpop: false)
+            return
+        }
+        //    self.showLoader()
+        loginBT.isEnabled = false
+        viewModel.getUser(id: userID, password: password)
     }
     
     override func viewDidLoad() {
@@ -39,7 +37,7 @@ class LoginVC: ParentViewController {
         
         
     }
-
+    
     func initViews () {
         userIDTF.delegate = self
         passwordTF.delegate = self
@@ -47,6 +45,6 @@ class LoginVC: ParentViewController {
         roundViewCorners(view: passwordView, radius: 25)
         roundViewCorners(view: loginBT, radius: 25)
     }
-
+    
 }
 
