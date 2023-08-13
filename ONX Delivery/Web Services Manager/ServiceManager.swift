@@ -13,7 +13,7 @@ class ServiceManager: NSObject {
     typealias ApiResponseWithStatusCode = (Error?, JSON?, Int?) -> Void
     
     
-    class func callAPI(url: String, method: HTTPMethod, parameters: [String:Any]?, custumHeaders: [String: String]?, onCompletion: @escaping ApiResponse) -> Void
+    class func callAPI(url: String, method: HTTPMethod, parameters: [String:[String:String]]?, custumHeaders: [String: String]?, onCompletion: @escaping ApiResponse) -> Void
     {
         var headers: HTTPHeaders!
         headers = [:]

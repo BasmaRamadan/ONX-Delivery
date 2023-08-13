@@ -8,11 +8,11 @@
 import UIKit
 
 class MainVC: ParentViewController {
-    var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.appState = self
+        navigationController?.navigationBar.isHidden = true
     }
 
 }

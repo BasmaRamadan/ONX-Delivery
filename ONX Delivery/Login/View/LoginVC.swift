@@ -47,16 +47,13 @@ class LoginVC: ParentViewController {
             DispatchQueue.main.async {
                 switch self?.viewModel.state {
                 case .error:
-                    self?.hideLoader()
-                    self?.loginBT.isEnabled = true
-                    self?.showAlert(title: "", message: self?.viewModel.errorMessage, shouldpop: false)
-                    let viewController = MainVC(nibName: "MainVCViewController", bundle: nil)
-                    self?.navigationController?.pushViewController(viewController, animated: true)
                     break
                 case .loading:
                     break
                 case .loaded:
                     self?.hideLoader()
+                    self?.loginBT.isEnabled = true
+                    self?.performSegue(withIdentifier: "toMain", sender: nil)
                     break
                 case .empty:
                     self?.hideLoader()
