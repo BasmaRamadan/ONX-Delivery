@@ -12,5 +12,7 @@ class Urls {
     static let baseUrl = "http://mapp.yemensoft.net/"
     
     static let login = "\(baseUrl)OnyxDeliveryService/Service.svc/CheckDeliveryLogin"
+    static let mainData = "\(baseUrl)OnyxDeliveryService/Service.svc/GetDeliveryBillsItems"
+
 }
 

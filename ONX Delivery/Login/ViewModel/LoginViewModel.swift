@@ -22,19 +22,13 @@ class LoginViewModel {
     {
         let url = Urls.login
         
-        let parameters:[String:[String:String]] = [
+        let parameters:[String:Any] = [
             "Value" : [
                 "P_LANG_NO": "2",
-                "P_DLVRY_NO": "1010",
-                "P_PSSWRD": "1"
+                "P_DLVRY_NO": id,
+                "P_PSSWRD": password
             ]
         ]
-        let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode(parameters) {
-            if let jsonString = String(data: jsonData, encoding: .utf8) {
-                print(jsonString)
-            }
-        }
         ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
             
             if response != nil
@@ -55,11 +49,6 @@ class LoginViewModel {
                 self.state = .error
             }
         }
-    }
-    func jsonToDictionary(from text: String) -> [String: Any]? {
-        guard let data = text.data(using: .utf8) else { return nil }
-        let anyResult = try? JSONSerialization.jsonObject(with: data, options: [])
-        return anyResult as? [String: Any]
     }
     
 }

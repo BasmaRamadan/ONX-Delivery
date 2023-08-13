@@ -34,7 +34,8 @@ class LoginVC: ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews ()
-        
+//        performSegue(withIdentifier: "toMain", sender: nil)
+
     }
     
     func initViews () {
